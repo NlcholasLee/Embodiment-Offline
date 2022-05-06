@@ -1,0 +1,93 @@
+@import "./_themes.scss";
+
+// 遍历主题map
+@mixin themeify {
+
+   @each $theme-name, $theme-map in $themes {
+      // !global 把局部变量强升为全局变量
+      $theme-map: $theme-map !global;
+
+      // 判断html的data-theme的属性值  #{}是sass的插值表达式
+      // & sass嵌套里的父容器标识   @content是混合器插槽，像vue的slot
+      [data-theme="#{$theme-name}"] & {
+         @content;
+      }
+   }
+}
+
+// 声明一个根据Key获取颜色的function
+@function themed($key) {
+   @return map-get($theme-map, $key);
+}
+
+// 获取小配置的基本颜色
+@mixin basic_color($color, $config) {
+   @if $config == null {
+      @include themeify {
+         background: themed($color);
+      }
+   }@else if $config < 1 {
+      @include themeify {
+         background: rgba(themed($color), $config);
+      }
+   }@else {
+      @include themeify {
+         background: lighten(themed($color), $config);
+      }
+   }
+}
+
+// 获取背景颜色
+@mixin background_color($color) {
+   @include themeify {
+      background: themed($color);
+   }
+}
+
+// 获取字体颜色
+@mixin font_color($color, $config) {
+   @if $config == null {
+      @include themeify {
+         color: themed($color);
+      }
+   }@else if $config < 1 {
+      @include themeify {
+         color: rgba(themed($color), $config);
+      }
+   }@else if $config >= 20 {
+      @include themeify {
+         color: darken(themed($color), $config);
+      }
+   }@else {
+      @include themeify {
+         color: lighten(themed($color), $config);
+      }
+   }
+}
+
+//获取配置器颜色
+@mixin configurator_color($color, $config) {
+   @if $config == null {
+      @include themeify {
+         background-color: themed($color);
+      }
+   }@else {
+      @include themeify {
+         background-color: lighten(themed($color), $config);
+      }
+   }
+}
+
+// darken 配置器
+@mixin darken_configurator_color($color, $config) {
+   @include themeify {
+      background-color: darken(themed($color), $config);
+   }
+}
+
+// 获取配置器shadow
+@mixin shadow_configurator_color($color) {
+   @include themeify {
+      box-shadow: 0 0 0.05em 0.2em themed($color);
+   }
+}

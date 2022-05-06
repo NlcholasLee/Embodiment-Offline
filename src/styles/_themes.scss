@@ -1,0 +1,35 @@
+$themes: (
+   light: (
+      // 基本颜色
+      accent: #6967fe,
+      dark: #1f2329,
+      text: #eee,
+      // 字体
+      font_color: #eee,
+      icon_color: #fff,
+      
+      // 背景
+      background_color:  linear-gradient(-20deg, #2b5876 0%, #4e4376 100%),
+      
+      // 配置器
+      configurator_color: #15254b,
+   
+   ),
+   
+   dark: (
+      // 基本颜色
+      accent: #6967fe,
+      dark: #1f2329,
+      text: #a4b2c1,
+      // 字体
+      font_color: #a4b2c1,
+      icon_color: #fff,
+      
+      // 背景
+      background_color: linear-gradient(60deg, #14171a 0%, #29323c 100%),
+      
+      // 配置器
+      configurator_color: #1f2329,
+   
+   )
+);
