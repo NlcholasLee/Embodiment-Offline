@@ -5,13 +5,14 @@
 ## 介绍
 
 **一个名为 化身 的网站，生成属于你在网络上的“化身”:camera_flash:。**
+![image](https://user-images.githubusercontent.com/65054017/167253086-8d7372d5-bc06-480f-ab02-8bbb2c872d3c.png)
 
 第一版本为离线版本，没有接入服务器，网站支持：
 - 响应式布局
 - 随机生成组合
 - 撤销 / 返回，有历史记录留存功能
 - 国际化中英文切换
-![image](https://user-images.githubusercontent.com/65054017/167252699-0a023feb-c52e-4ea3-9c77-381a0754dfa2.png)
+
 
 ## 项目开发
 
