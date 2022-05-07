@@ -140,7 +140,7 @@ function handlerAction(actionType: ActionType) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1.7rem 0;
   .avatar-wrapper {
     display: flex;
     justify-content: center;
