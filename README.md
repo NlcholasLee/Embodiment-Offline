@@ -11,6 +11,7 @@
 - 随机生成组合
 - 撤销 / 返回，有历史记录留存功能
 - 国际化中英文切换
+![image](https://user-images.githubusercontent.com/65054017/167252699-0a023feb-c52e-4ea3-9c77-381a0754dfa2.png)
 
 ## 项目开发
 
